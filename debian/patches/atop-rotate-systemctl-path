@@ -1,0 +1,12 @@
+Description: systemctl is in /bin on Debian
+Author: Marc Haber <mh+debian-packages@zugschlus.de>
+Forwarded: no
+Last-Update: 2022-08-10
+--- a/atop-rotate.service
++++ b/atop-rotate.service
+@@ -4,4 +4,4 @@ Documentation=man:atop(1)
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/bin/systemctl try-restart atop.service
++ExecStart=/bin/systemctl try-restart atop.service

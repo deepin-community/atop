@@ -1,0 +1,2 @@
+# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1021502
+atop: debian-news-entry-has-unknown-version 2.4.0-2 [usr/share/doc/atop/NEWS.Debian.gz:1]
