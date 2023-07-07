@@ -1,0 +1,15 @@
+Description: adapt upstreams service file to Debian
+Author: Marc Haber <mh+debian-packages@zugschlus.de>
+Forwarded: no
+Last-Update: 2016-08-07
+--- a/atopacct.service
++++ b/atopacct.service
+@@ -1,7 +1,7 @@
+ [Unit]
+ Description=Atop process accounting daemon
+ Documentation=man:atopacctd(8)
+-After=syslog.target
++Conflicts=acct.service
+ Before=atop.service
+ 
+ [Service]

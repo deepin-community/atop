@@ -1,0 +1,1245 @@
+commit 5bc3edc64ca01dd46922b34402c67c6f286399aa
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jan 7 14:27:52 2023 +0100
+
+    Version 2.8.1
+
+M	version.h
+
+commit a2c45992f59ce6110b24b22fc9bf65028197e96d
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jan 7 12:21:03 2023 +0100
+
+    Solve compiler warnings about format-truncation
+
+M	various.c
+
+commit b93546d1ed03ec5b6e0c747a2571820129d60771
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jan 7 12:02:37 2023 +0100
+
+    Avoid buffer overflows during value formatting
+
+M	various.c
+
+commit 490c73ce516bff6dd53786e2be29bbcbc4185071
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jan 7 12:00:36 2023 +0100
+
+    Correct NUMA conversion in logfiles from version 2.7 to 2.8
+
+M	atopconvert.c
+
+commit ed17722fa50f3a0be4d1d4a86336180a38a69109
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jan 7 11:16:42 2023 +0100
+
+    Added contributor
+
+M	AUTHORS
+
+commit 338637d911b98d67b3d3b8a25e25532659a36571
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Dec 29 23:32:50 2022 +0100
+
+    Rename AUTHOR in spec file
+
+M	rpmspec/atop.specsystemd
+
+commit 6621b213326fdeba79e8c15214f7e78597ce391f
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Dec 29 23:24:23 2022 +0100
+
+    Up-to-date list of contributors
+
+D	AUTHOR
+A	AUTHORS
+
+commit be2d5c43e4fd8b6f2754e2cabdd55857d5ad8da2
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Dec 29 22:33:12 2022 +0100
+
+    New version 2.8.0
+
+M	version.h
+
+commit d7f71c0bfc3980a0103ed23f55a8db4c72b8d6f2
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Dec 29 21:56:05 2022 +0100
+
+    Update timestamp of man pages
+
+M	man/atop.1
+M	man/atopacctd.8
+M	man/atopcat.1
+M	man/atopconvert.1
+M	man/atopgpud.8
+M	man/atoprc.5
+M	man/atopsar.1
+
+commit 3bfd0dbbeaf023c351235a44b92ad8b3691c4648
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Dec 29 15:39:34 2022 +0100
+
+    Adapt atopconvert for conversion to version 2.8
+
+M	README
+M	atopconvert.c
+A	prev/netstats_wrong.h
+A	prev/photoproc_28.h
+M	prev/photosyst_20.h
+M	prev/photosyst_21.h
+M	prev/photosyst_22.h
+M	prev/photosyst_23.h
+M	prev/photosyst_24.h
+M	prev/photosyst_25.h
+M	prev/photosyst_26.h
+M	prev/photosyst_27.h
+A	prev/photosyst_28.h
+
+commit 33c0abcd3423e276e538d26f4850c266abdcdbf5
+Merge: 3b7ad4b 6cc222a
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Dec 29 12:11:20 2022 +0100
+
+    Merge pull request #229 from pizhenwei/json-fix
+    
+    Json fix
+
+commit 3b7ad4b61f94776ddc0f9755ef2f0353c3eac962
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Dec 29 11:59:11 2022 +0100
+
+    Atopacct.service verifies if psacct/acct is active (solves issue #227)
+    To avoid that the atopacctd daemon and the (ps)acct service
+    both try to activate process accounting continuously, the
+    atopacct.service refuses to start when the (ps)acct service is
+    already active.
+
+M	atopacct.service
+
+commit 6cc222a8c528112f39f8657b84367a0a3b7c961f
+Author: zhenwei pi <pizhenwei@bytedance.com>
+Date:   Tue Dec 27 10:15:51 2022 +0800
+
+    Add avque counters to json data
+    
+    Signed-off-by: zhenwei pi <pizhenwei@bytedance.com>
+
+M	json.c
+
+commit be1fc512f00b36d6b80d9fe6aa73640787bf3417
+Author: zhenwei pi <pizhenwei@bytedance.com>
+Date:   Tue Dec 27 09:36:44 2022 +0800
+
+    Add inflight counters to json data
+    
+    Signed-off-by: zhenwei pi <pizhenwei@bytedance.com>
+
+M	json.c
+
+commit cf4d2d268f9fefadc5b56e717eb57f7260223834
+Author: zhenwei pi <pizhenwei@bytedance.com>
+Date:   Fri Dec 2 16:05:46 2022 +0800
+
+    Fix LLC output for Json
+    
+    Signed-off-by: zhenwei pi <pizhenwei@bytedance.com>
+
+M	json.c
+
+commit 66641630457e3b607391dd08bfe79b0a3ccbf416
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 24 13:24:24 2022 +0100
+
+    Solve format-overflow/maybe-uninitialized warnings
+
+M	atopsar.c
+M	gpucom.c
+M	photosyst.c
+M	showprocs.c
+M	various.c
+
+commit b6041164d738ba51eeacc9ef2676745564a33ee7
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 24 13:22:22 2022 +0100
+
+    Reshuffle counters to ease raw file conversion
+
+M	photosyst.h
+
+commit e395f48d4709bbcb03918cc752d9f8a2387e5c53
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 24 12:13:12 2022 +0100
+
+    Recalculate average queue in parseable output
+
+M	man/atop.1
+M	parseable.c
+
+commit 8d133c6f51f7d1424f3c4590dbb8621e971688ec
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 24 11:58:33 2022 +0100
+
+    Corrected the order of inflight/avque
+
+M	man/atop.1
+M	parseable.c
+
+commit 3a210c1b77f5069a8be364a8107aaa686bccdcd3
+Merge: e52eaaa ebfda60
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 24 11:54:06 2022 +0100
+
+    Merge branch 'bytedance-add-inflight'
+
+commit ebfda604a89c0906dc038636887ec0e11d0590d3
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 24 11:53:36 2022 +0100
+
+    Add inflight and avque counters to parseable data
+
+M	man/atop.1
+M	parseable.c
+M	showlinux.c
+
+commit a57b7ef96fba4fbb98ba92048c2ced2e90d92298
+Merge: e52eaaa a232722
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 24 11:38:27 2022 +0100
+
+    Merge branch 'add-inflight' of github.com:bytedance/atop into bytedance-add-inflight
+
+commit e52eaaa65f87ad0315cbd33362d046e2d786f5bc
+Merge: a082801 c6a0661
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 24 11:17:39 2022 +0100
+
+    Merge pull request #225 from natoscott/bdelay-space-fix
+    
+    Fix BDELAY in priphead call to make_proc_prints for schedprocs
+
+commit a0828016b1c5e87b73b58ff427b371dc0cb93195
+Merge: 7e83f05 e892d9a
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 24 11:16:40 2022 +0100
+
+    Merge pull request #224 from natoscott/deviate-container-preindex
+    
+    Correct the array index used for previous samples per-container CPU values
+
+commit 7e83f05e98d33f52f9c892a886584a0bdf6dec26
+Merge: e40449b cff3075
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 24 11:10:56 2022 +0100
+
+    Merge pull request #223 from natoscott/dskavio-print-fix
+    
+    Reinstate dropped printing of avio msec values between 99.95 and 9995
+
+commit e40449b7b2623da00f43a2141be536c38d196d5e
+Merge: 21bd4fd a26b937
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 24 10:46:42 2022 +0100
+
+    Merge pull request #222 from bytedance/display-rbd-disk
+    
+    photosyst: add ceph rbd disk display
+
+commit 21bd4fd643605e1b42e3e61f4ae82ce4bfadba5b
+Merge: d8d97f9 2b07b01
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 24 10:43:14 2022 +0100
+
+    Merge pull request #217 from bytedance/fix-numanr
+    
+    photosys.c: correct the numa number for NUM and NUC
+
+commit c6a066167ee33a9cbef353439594f7dfa61cb940
+Author: Nathan Scott <nathans@redhat.com>
+Date:   Thu Dec 15 15:16:08 2022 +1100
+
+    Fix BDELAY in priphead call to make_proc_prints for schedprocs
+
+M	showlinux.c
+
+commit e892d9afae4883f3488542a664de83012e42d9c1
+Author: Nathan Scott <nathans@redhat.com>
+Date:   Thu Dec 15 13:49:00 2022 +1100
+
+    Correct the array index used for previous samples per-container CPU values
+    
+    Compare to previous sample array handling for NFS, disks, interfaces, etc.
+
+M	deviate.c
+
+commit cff3075a5a05f98629c3f22c6c5d8466ca46c573
+Author: Nathan Scott <nathans@redhat.com>
+Date:   Thu Dec 15 11:27:04 2022 +1100
+
+    Reinstate dropped printing of avio msec values between 99.95 and 9995
+    
+    I believe this was an accidental change in commit db9eef1d4 which has
+    introduced a code path where no value is added to the buffer at all.
+
+M	showsys.c
+
+commit a26b937efb4cac44c5a8adcd0a7981501b48b83e
+Author: Fei Li <lifei.shirley@bytedance.com>
+Date:   Tue Dec 13 16:15:08 2022 +0800
+
+    photosyst: add ceph rbd disk display
+    
+    Ceph block devices are used in many scenarios, especially in k8s
+    cluster, in which case an external ceph storage cluster is used to
+    implement persistent storage for pods inside the k8s cluster.
+    
+    An example in /proc/diskstats is as follows:
+    254 288 rbd18   25359 1 2459552 18239 2 0 16 42 0 19706 11358 0 0 0 0
+    254 289 rbd18p1 25240 1 2453022 18190 2 0 16 42 0 19655 11337 0 0 0 0
+    
+    Signed-off-by: Fei Li <lifei.shirley@bytedance.com>
+
+M	photosyst.c
+
+commit 2b07b014153b6ccb00a4e02b134fa6cc9cec6fc2
+Author: Fei Li <lifei.shirley@bytedance.com>
+Date:   Tue Dec 6 20:48:13 2022 +0800
+
+    photosys.c: correct the numa number for NUM and NUC
+    
+    Current code uses array index to store the numa number, which may
+    sort the numanr to a wrong value after the qsort() funtion in
+    generic_samp().
+    
+    Fix this by re-adding the 'numanr' member for struct mempernuma and
+    cpupernuma to store the correct numa number. The permanent 'numanr'
+    member can guarantee the numa number from adjusting after qsort(),
+    while the qsort() function can continue working by sorting NUM from
+    small to large according to free memory, and sorting NUC from small
+    to large according to idle cpu.
+    
+    Besides, add NUC for JSON output.
+    
+    Fixes: 1fbda3f1081a ("Additions to NUMA counters")
+    Reported-by: Qi Zheng <zhengqi.arch@bytedance.com>
+    Signed-off-by: Fei Li <lifei.shirley@bytedance.com>
+
+M	deviate.c
+M	json.c
+M	parseable.c
+M	photosyst.c
+M	photosyst.h
+M	showsys.c
+
+commit d8d97f93f2425be97e4aca6df5c91fd18913ac16
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Nov 26 12:56:14 2022 +0100
+
+    Timeout when setting semaphore in atop (issue #207)
+
+M	acctproc.c
+
+commit e1a50559934bb9a1ca2b41eba77134abeaae3d22
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Nov 26 11:38:17 2022 +0100
+
+    Current CPU set to -1 for terminated process (solves issue #201)
+    When a process has terminated (status 'E') the current CPU will
+    be set to -1 (means: unknown) in the parsable output with label PRC.
+
+M	deviate.c
+M	man/atop.1
+
+commit ecfc92e04f33ebd09ca0c06debc16585ec993002
+Merge: 75a67ee 580099c
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Nov 26 10:41:39 2022 +0100
+
+    Merge branch 'pizhenwei-json'
+
+commit 580099c03e344f401755ad5f8297842b7e950083
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Nov 26 10:41:00 2022 +0100
+
+    Typo corrections and correction in man page
+
+M	json.c
+M	man/atop.1
+
+commit fb9edb2cabda7368b9115691ee297b71a486904c
+Author: zhenwei pi <pizhenwei@bytedance.com>
+Date:   Mon Nov 14 10:09:39 2022 +0800
+
+    Introduce JSON output by '-J xxx'
+    
+    It's possible to dump the record by JSON format, this is quite
+    friendly to web service, and lot of use libraries could parse these
+    data easily.
+    
+    The syntax is similar to parseable output.
+    
+    Co-authored-by: Fei Li <lifei.shirley@bytedance.com>
+    Signed-off-by: Fei Li <lifei.shirley@bytedance.com>
+    Signed-off-by: zhenwei pi <pizhenwei@bytedance.com>
+
+M	Makefile
+M	atop.c
+A	json.c
+A	json.h
+M	man/atop.1
+
+commit 75a67eee67962ab2b2a787375de6907a008164f9
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Tue Nov 1 20:17:39 2022 +0100
+
+    Add missing counter iInCsumErrors to ICMP counters
+
+M	netstats.h
+
+commit a232722a59c4eeeeadf4e8f5c269d59eff6b8f70
+Author: Teng Hu <huteng.ht@bytedance.com>
+Date:   Mon Aug 15 14:16:25 2022 +0800
+
+    supplement inflight I/O requests
+    
+    Inflight I/O requests count I/O requests issued to the device driver but
+    have not yet completed, which are useful to analyze system I/O status.
+    More than this, since plenty of processes remain in D status for a long time
+    come from I/O troubles, inflight I/O values also help to examine these processes.
+    
+    Signed-off-by: Teng Hu <huteng.ht@bytedance.com>
+
+M	deviate.c
+M	man/atop.1
+M	photosyst.c
+M	photosyst.h
+M	showlinux.c
+M	showlinux.h
+M	showsys.c
+
+commit be42f0b0eed45af5045c2f1d85b4bd87e22ca32f
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Tue Aug 30 16:55:57 2022 +0200
+
+    Man page: clarify elapsed time in PRG parseable output
+
+M	man/atop.1
+
+commit e9f3048f7e04c39d43cd19481e14797d6163556d
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Tue Aug 30 16:46:23 2022 +0200
+
+    Exponent calulation for high counter might exceed column width
+    When a column width was defined of e.g. 4 positions, the value
+    99999 was shown as 100e3 instead of 99e3 (upward rounding caused
+    an extra position).
+
+M	various.c
+
+commit 38ae774ef76bb5472215b4e0dc7e339b2fdddff2
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Tue Aug 30 16:24:22 2022 +0200
+
+    PID selection can not be undone for same interval
+    When pressing 'I' to select particular PIDs and pressing 'I'
+    again within the same interval to deselect by pressing the
+    Enter-key, the deselection is ignored.
+    Solved by reinitializing the input buffer.
+
+M	showgeneric.c
+
+commit ea723065de70854c127daa9545d25df1bab4fd3d
+Merge: ba677a7 02479a2
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Aug 20 13:36:35 2022 +0200
+
+    Merge branch 'secondmem'
+
+commit 02479a2ededa76c843d59828d4e8b8886d0723a9
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Aug 20 13:32:02 2022 +0200
+
+    Split the MEM line into two lines and add pagetable size
+    Since it was hardly possible to view the values in the MEM line
+    (too many), the memory utilization has been spread over two lines.
+    The amount of memory used for page tables has been added.
+
+M	deviate.c
+M	man/atop.1
+M	parseable.c
+M	photosyst.c
+M	photosyst.h
+M	showlinux.c
+M	showlinux.h
+M	showsys.c
+
+commit ba677a79c2cc987db03ea4226fd95a28351b429a
+Merge: 76a6774 0933e00
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Aug 13 13:05:26 2022 +0200
+
+    Merge branch 'bytedance-support-sockstat-mem-consumption'
+
+commit 0933e00880ebfb425ac98b106c24c825a10fbdad
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Aug 13 13:03:04 2022 +0200
+
+    Memory usage for TCP/UDP sockets
+
+M	man/atop.1
+M	parseable.c
+M	photosyst.c
+M	showlinux.c
+M	showsys.c
+
+commit ffdbb1994b9b4ca2de3e6ca6da102a3f9162787e
+Merge: 76a6774 a2422e3
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Aug 13 11:56:44 2022 +0200
+
+    Merge branch 'support-sockstat-mem-consumption' of github.com:bytedance/atop into bytedance-support-sockstat-mem-consumption
+
+commit 76a67740379ffd13644d21ebe9e19f2e87e03273
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Aug 13 11:49:02 2022 +0200
+
+    Add Documentation key to atop-rotate.service/.timer (issue #206)
+
+M	atop-rotate.service
+M	atop-rotate.timer
+M	man/atop.1
+
+commit d24484bbc67ceaeb302cbd6294da398aea10c7b7
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Aug 13 11:30:54 2022 +0200
+
+    Correct typos in man pages (solves issue #205)
+
+M	man/atop.1
+M	man/atopsar.1
+
+commit 69599a02aa21b77aaf56fc2303b86296c557c1e0
+Merge: 57a808e c9fea4e
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Aug 13 11:13:56 2022 +0200
+
+    Merge pull request #198 from bytedance/showhdrline-fix-sprintf-oob
+    
+    showhdrline: fix OOB access when COLS is too small
+
+commit 57a808e3cdf0f2d4b516a211e8e915b0d972b33f
+Merge: 8365a75 5c326ee
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Aug 13 10:28:46 2022 +0200
+
+    Merge pull request #203 from pizhenwei/fix-compile-error-with-http
+    
+    Fix compiling error with -DHTTPSTATS
+
+commit 8365a7583e08a27ed14aedd2d0909dbde0513f18
+Merge: d9e0e6a 4243e34
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Jul 28 11:58:19 2022 +0200
+
+    Merge branch 'cgroup'
+
+commit 4243e34f6bb7444f630350843b66c8f490ecc283
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Jul 28 11:52:34 2022 +0200
+
+    Add cgroup support (solves issue #127)
+    The current cgroup is registered for systems that are based on cgroup v2.
+    Apart from the group name also relevant controller information is
+    maintained, like the cpu.max and the memory.max (for the group itself
+    and the most restrictive value in the parent groups).
+
+M	atop.h
+M	deviate.c
+M	man/atop.1
+M	parseable.c
+M	photoproc.c
+M	photoproc.h
+M	rawlog.c
+M	showgeneric.c
+M	showgeneric.h
+M	showlinux.c
+M	showlinux.h
+M	showprocs.c
+
+commit 5c326ee948775afc541ecd88017c5e9d2b4099bf
+Author: zhenwei pi <pizhenwei@bytedance.com>
+Date:   Thu Jul 21 15:52:17 2022 +0800
+
+    Fix compiling error with -DHTTPSTATS
+    
+    Fix compiling error like this:
+    In file included from atopconvert.c:77:
+    prev/photosyst_27.h:327:5: error: conflicting types for ‘getwwwstat’
+      327 | int getwwwstat(unsigned short, struct wwwstat_27 *);
+          |     ^~~~~~~~~~
+    In file included from atopconvert.c:52:
+    photosyst.h:361:5: note: previous declaration of ‘getwwwstat’ was here
+      361 | int getwwwstat(unsigned short, struct wwwstat *);
+          |     ^~~~~~~~~~
+    
+    Signed-off-by: zhenwei pi <pizhenwei@bytedance.com>
+
+M	prev/photosyst_27.h
+
+commit a2422e397af5ebbea1a03a36ec82e8bd77632b4a
+Author: Fei Li <lifei.shirley@bytedance.com>
+Date:   Fri Jul 8 18:35:52 2022 +0800
+
+    supplement tcpsock and udpsock memory consumption
+    
+    In some production cases, tcp socket consumes lots of memory, which
+    has no intersection with the statistics in /proc/meminfo file.
+    
+    Considering the current code does not collect and record the tcpsock
+    or udpsock statistics reported via /proc/net/sockstat, supplement
+    the following two to help locate memory consumption issues:
+    - tcpsock, number of pages allocated by TCP sockets
+    - udpsock, number of pages allocated by UDP sockets
+    
+    Signed-off-by: Fei Li <lifei.shirley@bytedance.com>
+
+M	deviate.c
+M	man/atop.1
+M	parseable.c
+M	photosyst.c
+M	photosyst.h
+M	showlinux.c
+M	showlinux.h
+M	showsys.c
+
+commit d9e0e6a703f152e3e17195afb227596d9983ca4e
+Merge: f2e7051 bc84472
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jul 9 12:25:29 2022 +0200
+
+    Merge pull request #196 from pizhenwei/fix-man-disk-busy
+    
+    Fix disk busy in man page
+
+commit f2e7051a50ed116a1cd35d0e3e2b268cb3472d9e
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jul 9 12:10:39 2022 +0200
+
+    Store PID width in header of raw log
+    Register the number of positions for PID and TID numbers on the
+    measured system in the raw log. In this way, the viewing of the
+    raw log on another system will use the proper column width for PID/TID.
+
+M	atop.c
+M	atop.h
+M	rawlog.c
+M	rawlog.h
+M	showlinux.c
+M	various.c
+
+commit c9fea4e3d55b589ec202fb651f461c7acffb8fc0
+Author: Fei Li <lifei.shirley@bytedance.com>
+Date:   Fri Jun 10 15:06:21 2022 +0800
+
+    showhdrline: fix OOB access when COLS is too small
+    
+    - How to reproduce:
+    Drag the window to the far right, a "Segmentation fault (core dumped)"
+    message occurs.
+    
+    - Debug:
+    Add some print values, saying COLS=2, thus maxw.
+    
+    After getspacings(), elemptr becomes a NULL array again: maxw is too
+    small, so after nitems times of memmove(), newelems is NULL.
+    
+    Then back to showhdrline(), as each curelem.f is zero, no chead is
+    assigned to buf and col is still zero. However, after the calculation:
+    allign=COLS-col-pagindiclen;//align=2-0-4=-2 < 0, previous code jumps
+    to sprintf(buf+col+allign, "%s", pagindic), which triggers
+    out-of-bounds access as col+allign = -2 < 0.
+    
+    - Fix:
+    Fix this by judging if (col+allign >= 0) before jumping to avoid the
+    OOB access.
+    
+    Reported-by: Qi Zheng <zhengqi.arch@bytedance.com>
+    Signed-off-by: Fei Li <lifei.shirley@bytedance.com>
+
+M	showprocs.c
+
+commit bc84472f20c9d8c101901b5b32f04168a596af27
+Author: zhenwei pi <pizhenwei@bytedance.com>
+Date:   Mon May 16 08:59:37 2022 +0800
+
+    Fix disk busy in man page
+    
+    Reference source code from Linux:
+    https://github.com/torvalds/linux/blob/master/block/blk-core.c
+    
+    void update_io_ticks(struct block_device *part, unsigned long now, bool end)
+    {
+    	unsigned long stamp;
+    again:
+    	stamp = READ_ONCE(part->bd_stamp);
+    	if (unlikely(time_after(now, stamp))) {
+    		if (likely(cmpxchg(&part->bd_stamp, stamp, now) == stamp))
+    			__part_stat_add(part, io_ticks, end ? now - stamp : 1);
+    	}
+    	if (part->bd_partno) {
+    		part = bdev_whole(part);
+    		goto again;
+    	}
+    }
+    
+    The io_ticks field records the elapsed time during which I/O requests
+    were issued to the device. From this design, one or more I/O requests
+    may occurs in the same tick, so this number does not reflect the
+    performance limits of mordern SSD/NVMe.
+    
+    atop reads this counter and calculates the percentage, fix the man
+    page to introduce this.
+    
+    Signed-off-by: zhenwei pi <pizhenwei@bytedance.com>
+
+M	man/atop.1
+
+commit b9d7533ef536cd07683680786c1bcf9c4e6bd9d4
+Merge: f5da8d3 ed4fd0f
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat May 14 11:04:33 2022 +0200
+
+    Merge pull request #195 from pizhenwei/move-run_in_guest-into-various
+    
+    Move run_in_guest into various.c
+
+commit f5da8d31e7346a7873fe0748cdf136942c64bce3
+Merge: 98a82fd 591bf96
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat May 7 12:47:16 2022 +0200
+
+    Merge branch 'blockdelay'
+
+commit 591bf964db4da7d66ffd4a2920fcb1dcf5d06436
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat May 7 12:45:58 2022 +0200
+
+    Add block I/O delay to processes/threads
+
+M	deviate.c
+M	man/atop.1
+M	parseable.c
+M	photoproc.c
+M	photoproc.h
+M	showlinux.c
+M	showlinux.h
+M	showprocs.c
+
+commit ed4fd0feab628fef20e6c08f3722fdb0dfbe3c4f
+Author: zhenwei pi <pizhenwei@bytedance.com>
+Date:   Mon Apr 18 18:36:42 2022 +0800
+
+    Move run_in_guest into various.c
+    
+    run_in_guest tries to detect hypervisor, it works as a helper
+    function. So move this into various.c.
+    
+    Signed-off-by: zhenwei pi <pizhenwei@bytedance.com>
+
+M	atop.h
+M	photosyst.c
+M	various.c
+
+commit 98a82fdc2258a3bb67ff6dc1dd189b81683837a1
+Merge: b90e41f 9cfeb90
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Apr 9 12:28:32 2022 +0200
+
+    Merge branch 'pizhenwei-pgintout'
+
+commit 9cfeb9096a45c21fd5e5e5791ff2a21e2fbe86d7
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Apr 9 12:28:02 2022 +0200
+
+    Minor changes to text, column priority and coloring
+
+M	man/atop.1
+M	showlinux.c
+M	showsys.c
+
+commit b0d07a04298d5dec969b174e3396f1a93cb6fc86
+Author: zhenwei pi <pizhenwei@bytedance.com>
+Date:   Sun Mar 20 20:11:22 2022 +0800
+
+    Support pgin & pgout
+    
+    Collect pgint & pgout from /proc/vmstat. This counter is provided by
+    linux block layer, it represents the total number of memory read from/
+    written to all the block devices.
+    
+    Signed-off-by: zhenwei pi <pizhenwei@bytedance.com>
+
+M	deviate.c
+M	man/atop.1
+M	parseable.c
+M	photosyst.c
+M	photosyst.h
+M	showlinux.c
+M	showlinux.h
+M	showsys.c
+
+commit b90e41f541f122b6521f476200e6b97657add417
+Merge: bfd2537 52676b9
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Mar 12 11:37:47 2022 +0100
+
+    Merge pull request #192 from pizhenwei/fix-compiling-errors
+    
+    Fix compiling warnings
+
+commit bfd2537d8282f79685a742c4b40779c2839d6974
+Merge: a038796 31b632b
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Mar 12 11:30:38 2022 +0100
+
+    Merge pull request #193 from 7h3w1zz/man-typo
+    
+    Fix typo in man page
+
+commit a038796ec877e098c1ba265f3782386257bf6421
+Merge: 5df2c9a 3bcfce3
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Mar 12 11:24:59 2022 +0100
+
+    Merge branch 'bytedance-calibrate-process-nthr'
+
+commit 3bcfce3e9dd747d628645b04dc39f9d1fac9b708
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Mar 12 11:24:34 2022 +0100
+
+    Correction on calibration (one too many)
+
+M	photoproc.c
+
+commit 1876fd3474563b71a62b4f0e672f4b3ebd0d9def
+Merge: 5df2c9a bdadf39
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Mar 12 10:59:58 2022 +0100
+
+    Merge branch 'calibrate-process-nthr' of https://github.com/bytedance/atop into bytedance-calibrate-process-nthr
+
+commit 5df2c9ae74a57312f2d0da245a58d1a0c84704d5
+Merge: 3dfaa7f ced67a5
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Mar 12 10:44:58 2022 +0100
+
+    Merge branch 'integerbeans-fix-vmwballoon-photosyst'
+    Accepting pull request #189 with modification to stay compatible.
+
+commit ced67a5ec6f4a258f59e247a87425179b3ff015d
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Mar 12 10:44:32 2022 +0100
+
+    Detect vmmemctl at two locations
+
+M	photosyst.c
+
+commit 52676b93113120a8bd38425b439ccc517bcd406e
+Author: zhenwei pi <pizhenwei@bytedance.com>
+Date:   Mon Mar 7 15:15:13 2022 +0800
+
+    Use dup2 instead of close+dup
+    
+    Build atop on Ubuntu 20.04, gcc 9.3:
+    showgeneric.c:2843:11: warning: ignoring return value of ‘dup’, declared
+    with attribute warn_unused_result [-Wunused-result]
+     2843 |    (void) dup(1);
+    
+    Use dup2 instead of close+dup to avoid compiling warning, also use
+    fileno to avoid hard code:
+    fd 0 -> fileno(stdin)
+    fd 1 -> fileno(stdout)
+    
+    Signed-off-by: zhenwei pi <pizhenwei@bytedance.com>
+
+M	atopcat.c
+M	atopsar.c
+M	showgeneric.c
+
+commit afa269ba299da4b04fe651a9159d40d7f4bd2f02
+Author: zhenwei pi <pizhenwei@bytedance.com>
+Date:   Mon Mar 7 14:41:01 2022 +0800
+
+    Fix compiling warning
+    
+    Build atop on Ubuntu 20.04, gcc 9.3:
+    photosyst.c:79:17: warning: ‘%s’ directive output may be truncated writing
+    up to 255 bytes into a region of size 231 [-Wformat-truncation=]
+       79 | #define NUMADIR "/sys/devices/system/node"
+          |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+    photosyst.c:867:28: note: in expansion of macro ‘NUMADIR’
+      867 |    snprintf(fn, sizeof fn, NUMADIR "/%s/meminfo", dentry->d_name);
+          |                            ^~~~~~~
+    photosyst.c:993:38: note: format string is defined here
+      993 |    snprintf(fn, sizeof fn, NUMADIR "/node%d/cpumap", j);
+    
+    Use larger buffer to avoid compiling warning.
+    
+    Signed-off-by: zhenwei pi <pizhenwei@bytedance.com>
+
+M	photosyst.c
+
+commit bdadf39b7a1062c69f0221250f10d5810402fbd6
+Author: Fei Li <lifei.shirley@bytedance.com>
+Date:   Tue Feb 15 15:00:22 2022 +0800
+
+    Calibrate the value of nthr for each process
+    
+    In current code, we firstly get one process's thread number by
+    reading "Threads:" from /proc/pid/status; then secondly load each
+    thread's info into devtstat->taskall by traversing each tid under
+    /proc/pid/task/. Here, information inconsistency occurs if some
+    processes frequently creates or deletes threads. For example:
+    $cat /proc/6/status |grep Threads; sleep 0.1; ls /proc/6/task/ | wc -l
+    Threads:        70
+    71
+    
+    To fix this, calibrate the value of nthr after iterating each
+    process's threads: re-record the number of threads and assign
+    to each process's nthr again.
+    
+    Signed-off-by: Fei Li <lifei.shirley@bytedance.com>
+
+M	photoproc.c
+
+commit d83d56cd7e0f26b7495901ebc186cd71b75d0c9d
+Author: integerbeans <w-gh@wmeyer.eu>
+Date:   Thu Feb 17 12:01:32 2022 +0100
+
+    photosyst.c: fixed path for vmmemctl
+
+M	photosyst.c
+
+commit 31b632b6b9187cfa288796067849dee660afb756
+Author: Jacob <38846015+7h3w1zz@users.noreply.github.com>
+Date:   Tue Feb 8 14:20:58 2022 -0500
+
+    Fix typo in man page
+
+M	man/atop.1
+
+commit 3dfaa7fd985324bc05f47cc892166ecb0d866d94
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Feb 5 12:32:08 2022 +0100
+
+    Added link
+
+M	README.md
+
+commit d75775438afec328df6087e8fd5b537c9883bd30
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Tue Jan 25 17:02:42 2022 +0100
+
+    Only print current CPU frequency when supported by CPU architecture
+
+M	showsys.c
+
+commit 09e8812ff705b8a2f4a46f22968c40ead7799781
+Merge: 390fca3 31d4be0
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sun Jan 16 16:42:10 2022 +0100
+
+    Merge pull request #184 from pizhenwei/llc-per-sec
+    
+    Support per-second counter for LLC
+
+commit 390fca31bc0fc3026f9f351b2a46b93782d908fd
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sun Jan 16 16:41:30 2022 +0100
+
+    Lower priority of column 'numnode' in MEM line
+
+M	showlinux.c
+
+commit 31d4be081c950e859c7c62524d8812dea782720d
+Author: zhenwei pi <pizhenwei@bytedance.com>
+Date:   Fri Jan 14 15:02:18 2022 +0800
+
+    Support per-second counter for LLC
+    
+    Signed-off-by: zhenwei pi <pizhenwei@bytedance.com>
+
+M	showsys.c
+
+commit 69e61e071ce82933c2763bb5095caf3563da8080
+Merge: 78b4193 060dd9f
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Wed Jan 12 17:21:28 2022 +0100
+
+    Merge branch 'pizhenwei-llc-monitor'
+
+commit 060dd9fd2552f30319a999e3074b7fa00fb66c66
+Merge: 78b4193 0dfcb19
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Wed Jan 12 17:21:09 2022 +0100
+
+    Fixed conflicts
+
+commit 78b419310928251b86751330fe30a7e9daef8c43
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Wed Jan 12 17:01:35 2022 +0100
+
+    Reformat status line info in initial screen
+
+M	showgeneric.c
+
+commit b155a541b93602053521796456ac8e957ff0fbec
+Merge: 7cf3f3c eec27ce
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Wed Jan 12 16:45:49 2022 +0100
+
+    Merge branch 'pizhenwei-llc-monitor'
+
+commit eec27cebf4de9631199c50b318973201f0637a0e
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Wed Jan 12 16:45:16 2022 +0100
+
+    Cosmetic changes
+
+M	deviate.c
+M	man/atop.1
+M	photosyst.c
+M	showgeneric.c
+
+commit 0dfcb1996ac3f19663f6a38c30dc2ad92385db8d
+Author: zhenwei pi <pizhenwei@bytedance.com>
+Date:   Wed Jan 12 15:13:33 2022 +0800
+
+    Add LLC in atop man page
+    
+    Signed-off-by: zhenwei pi <pizhenwei@bytedance.com>
+
+M	man/atop.1
+
+commit 48f32410caca06e0de8ea6066100550b683933c7
+Author: zhenwei pi <pizhenwei@bytedance.com>
+Date:   Wed Dec 29 17:08:26 2021 +0800
+
+    Support LLC collection
+    
+    Since 2017, Linux started to support resctrl which can be used to
+    control QoS of CPU cache and monitor LLC(last level cache).
+    
+    End user can use on an Intel platform:
+     ~# mount -t resctrl resctrl -o mba_MBps /sys/fs/resctrl
+    Or on a AMD platform:
+     ~# mount -t resctrl resctrl -o cdp /sys/fs/resctrl
+    
+    Then we can find several directories like:
+    /sys/fs/resctrl/mon_data/mon_L3_XX
+    
+    These counters can be found in doc:
+    https://github.com/torvalds/linux/blob/master/Documentation/x86/resctrl.rst
+    
+    On AMD Rome/Milan, there are several dies in a socket, and each die
+    uses it's own L3 cache. With this patch, we can distinguish memory
+    bandwidth of each die to know workload is balanced or not.
+    
+    Or course, on a legacy platform, all the CPU cores share a single L3
+    cache in a socket, we can know the memory bandwidth and cache usage
+    of the full socket.
+    
+    Test on AMD Milan(Zen3), atop shows:
+    LLC |  tot   211.3G   |  loc   211.2G  |   LLC15   100%  |
+    LLC |  tot   185.0G   |  loc   308.1M  |   LLC00   100%  |
+    LLC |  tot   241.5M   |  loc   207.8M  |   LLC08    94%  |
+    LLC |  tot   130.1M   |  loc    94.5M  |   LLC05    20%  |
+    LLC |  tot   111.0M   |  loc    90.5M  |   LLC13    85%  |
+    LLC |  tot   117.1M   |  loc    83.0M  |   LLC03    11%  |
+    LLC |  tot    96.0M   |  loc    83.5M  |   LLC12    75%  |
+    LLC |  tot   106.6M   |  loc    56.1M  |   LLC01    42%  |
+    LLC |  tot    82.7M   |  loc    71.9M  |   LLC14    82%  |
+    LLC |  tot    80.8M   |  loc    69.0M  |   LLC11    82%  |
+    LLC |  tot    74.3M   |  loc    64.7M  |   LLC09    85%  |
+    LLC |  tot    70.8M   |  loc    59.2M  |   LLC10    77%  |
+    LLC |  tot    65.4M   |  loc    41.5M  |   LLC06    15%  |
+    LLC |  tot    50.5M   |  loc    28.1M  |   LLC07    16%  |
+    LLC |  tot    39.2M   |  loc    25.1M  |   LLC02     6%  |
+    LLC |  tot    38.7M   |  loc    20.8M  |   LLC04     4%  |
+    
+    Signed-off-by: zhenwei pi <pizhenwei@bytedance.com>
+
+M	atop.c
+M	atop.h
+M	deviate.c
+M	parseable.c
+M	photosyst.c
+M	photosyst.h
+M	showgeneric.c
+M	showgeneric.h
+M	showlinux.c
+M	showlinux.h
+M	showsys.c
+
+commit 6180f2a8b10ed7dc0a7fe196fe5a70a4a73d48d4
+Merge: 7cf3f3c c4437bc
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Tue Jan 11 16:03:40 2022 +0100
+
+    Merge branch 'llc-monitor' of https://github.com/pizhenwei/atop into pizhenwei-llc-monitor
+
+commit 7cf3f3c6b68f1ec3073569ab1b4bd4365b6757bd
+Merge: 1e4451b 57ff34f
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Tue Jan 11 14:10:48 2022 +0100
+
+    Merge pull request #183 from thesamesam/openrc-init
+    
+    Add OpenRC init scripts (atop, atopacct)
+
+commit 57ff34f028423f6b2a4bf6fbd0c4a1e98ad87dfc
+Author: Sam James <sam@gentoo.org>
+Date:   Sun Jan 9 08:00:25 2022 +0000
+
+    Add OpenRC init scripts (atop, atopacct)
+    
+    These have been used for some time in Gentoo but
+    should work fine on e.g. Alpine too (any distribution
+    using OpenRC).
+    
+    Signed-off-by: Sam James <sam@gentoo.org>
+
+A	atop.rc.openrc
+A	atopacct.rc.openrc
+
+commit 1e4451b66fdfadc9a1913db59a341f4039974398
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jan 8 13:07:20 2022 +0100
+
+    New version 2.7.1
+
+M	version.h
+
+commit 115b355cb52eee4b11ce00e5b01decde37796e90
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Wed Jan 5 19:12:27 2022 +0100
+
+    Explicit type definition in atop.service (issue #180)
+
+M	atop.service
+
+commit 9afc5ad3d714ea09f9ffdebd79b345fe223c7e20
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Wed Jan 5 18:54:21 2022 +0100
+
+    Correct disk stats in atopsar (issue #182)
+    A wrong disk report is shown with the -d/-l/-f flags.
+    When the kernel supports the discard counter per disk,
+    output lines are empty in the disk report.
+    When the kernel doesnot support the discard counter per disk,
+    output lines often show a negative value for for the average
+    access time (avserv).
+
+M	atopsar.c
+
+commit c4437bc58b1c205204b785493f8d306d7bf9e660
+Author: zhenwei pi <pizhenwei@bytedance.com>
+Date:   Wed Dec 29 17:08:26 2021 +0800
+
+    Support LLC collection
+    
+    Since 2017, Linux started to support resctrl which can be used to
+    control QoS of CPU cache and monitor LLC(last level cache).
+    
+    End user can use on an Intel platform:
+     ~# mount -t resctrl resctrl -o mba_MBps /sys/fs/resctrl
+    Or on a AMD platform:
+     ~# mount -t resctrl resctrl -o cdp /sys/fs/resctrl
+    
+    Then we can find several directories like:
+    /sys/fs/resctrl/mon_data/mon_L3_XX
+    
+    These counters can be found in doc:
+    https://github.com/torvalds/linux/blob/master/Documentation/x86/resctrl.rst
+    
+    On AMD Rome/Milan, there are several dies in a socket, and each die
+    uses it's own L3 cache. With this patch, we can distinguish memory
+    bandwidth of each die to know workload is balanced or not.
+    
+    Or course, on a legacy platform, all the CPU cores share a single L3
+    cache in a socket, we can know the memory bandwidth and cache usage
+    of the full socket.
+    
+    Test on AMD Milan(Zen3), atop shows:
+    LLC |  tot   211.3G   |  loc   211.2G  |   LLC15   100%  |
+    LLC |  tot   185.0G   |  loc   308.1M  |   LLC00   100%  |
+    LLC |  tot   241.5M   |  loc   207.8M  |   LLC08    94%  |
+    LLC |  tot   130.1M   |  loc    94.5M  |   LLC05    20%  |
+    LLC |  tot   111.0M   |  loc    90.5M  |   LLC13    85%  |
+    LLC |  tot   117.1M   |  loc    83.0M  |   LLC03    11%  |
+    LLC |  tot    96.0M   |  loc    83.5M  |   LLC12    75%  |
+    LLC |  tot   106.6M   |  loc    56.1M  |   LLC01    42%  |
+    LLC |  tot    82.7M   |  loc    71.9M  |   LLC14    82%  |
+    LLC |  tot    80.8M   |  loc    69.0M  |   LLC11    82%  |
+    LLC |  tot    74.3M   |  loc    64.7M  |   LLC09    85%  |
+    LLC |  tot    70.8M   |  loc    59.2M  |   LLC10    77%  |
+    LLC |  tot    65.4M   |  loc    41.5M  |   LLC06    15%  |
+    LLC |  tot    50.5M   |  loc    28.1M  |   LLC07    16%  |
+    LLC |  tot    39.2M   |  loc    25.1M  |   LLC02     6%  |
+    LLC |  tot    38.7M   |  loc    20.8M  |   LLC04     4%  |
+    
+    Signed-off-by: zhenwei pi <pizhenwei@bytedance.com>
+
+M	atop.c
+M	atop.h
+M	deviate.c
+M	parseable.c
+M	photosyst.c
+M	photosyst.h
+M	showgeneric.c
+M	showgeneric.h
+M	showlinux.c
+M	showlinux.h
+M	showsys.c
+
+commit ffb30c62ad5a3e7844d3d9004c174af58eb3dc60
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jan 1 14:37:18 2022 +0100
+
+    Add information about service activation to README file
+
+M	README
+
+commit fdf3526bd35c1a84dd11bb73110c1a1f4148e39d
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Fri Dec 31 11:25:13 2021 +0100
+
+    Add directory to .gitignore
+
+M	.gitignore
+
+commit 5dbe750eca1e468694dc4d4d0d251a485f58ad74
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Fri Dec 31 11:25:04 2021 +0100
+
+    Clarify relation between atop/atopacctd in man page
+
+M	man/atop.1
+
+commit 1b4f7d6d2e14e768f310fc6041c05c5dcc69cee7
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Fri Dec 31 11:24:00 2021 +0100
+
+    Added license info
+
+M	atopgpud
+M	netlink.c
+
+commit a67368badc8b639f23268e636a1a3d8787ee90c5
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Fri Dec 31 11:23:18 2021 +0100
+
+    Added generic license info to README #179
+
+M	README

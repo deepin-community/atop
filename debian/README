@@ -1,0 +1,58 @@
+atop in Debian
+==============
+
+
+Documentation
+-------------
+This document contains background information that you might find
+helpful to understand some of the design decisions that the atop
+maintainer took to bring atop to where it is at the moment. For
+operational reference, you might want to look at the manual pages that
+come with the package and the excellent upstream docs.
+
+
+Log rotation
+------------
+atop writes "logs" that can be read back by atop -r. They're written in
+an unfortunately undocumented binary format, so you need an executable
+atop to convert them back into a readable form. You can also use atop to
+play back the files as if they were live data.
+
+The playback function relies on the log files getting rotated more or
+less exactly at midnight. atop does not automatically change to a
+different file when its boundaries are reached during playback. Hence,
+log rotation is done with a non-randomized systemd timer, and adding
+randomization would break the playback feature.
+
+Admittedly, /var/lib would be a better place for the log files as they
+are not "logs" in the UNIX sense of the word. Migrating this would be a
+major source of bugs, hence the atop maintainer is reluctant to do this.
+I would, however, consider a tested, documented patch / merge request
+with a commitment to help handle resulting bug reports.
+
+
+Participating in development
+----------------------------
+The atop packaging takes place on
+[Salsa](https://salsa.debian.org/debian/atop). The main communication
+channel is the [Debian Tracker Package Mail
+Address](mailto:atop@packages.debian.org). You can subscribe to the
+messages through the [Debian Tracker Package
+Page](https://tracker.debian.org/pkg/atop). If you want to
+participate, create an account on Salsa, clone the Debian/atop
+project and submit a Merge Request. Feel free to use Salsa CI to have
+your work tested automatically when you push.
+
+Working with branches and merge requests means rebasing a lot. To make
+this easier, please don't squash your work into one huge commit. 
+Use small, independent commits that can easily be understood. It is ok
+to rebase or force-push to your development branch even after opening
+the merge request. Merges that can be pulled into master as a
+fast-forward merge are preferred.
+
+
+
+
+Credits
+-------
+This document was compiled by the atop maintainer in September 2022.

@@ -1,0 +1,13 @@
+Description: create Debian's atop.default file as patched from Upstream's
+Author: Marc Haber <mh+debian-packages@zugschlus.de>
+Forwarded: no
+Last-Update: 2019-02-17
+--- a/atop.default
++++ b/atop.default
+@@ -1,3 +1,6 @@
++# /etc/default/atop
++# see man atoprc for more possibilities to configure atop execution
++
+ LOGOPTS=""
+ LOGINTERVAL=600
+ LOGGENERATIONS=28

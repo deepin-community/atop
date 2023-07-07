@@ -1,0 +1,26 @@
+Description: do not install atopgpud
+Author: Marc Haber <mh+debian-packages@zugschlus.de>
+Forwarded: no
+Last-Update: 2019-01-18
+--- a/Makefile
++++ b/Makefile
+@@ -150,8 +150,8 @@ genericinstall:	atop atopacctd atopconve
+ 		ln -sf atop             $(DESTDIR)$(BINPATH)/atopsar
+ 		cp atopacctd  		$(DESTDIR)$(SBINPATH)/atopacctd
+ 		chmod 0700 		$(DESTDIR)$(SBINPATH)/atopacctd
+-		cp atopgpud  		$(DESTDIR)$(SBINPATH)/atopgpud
+-		chmod 0700 		$(DESTDIR)$(SBINPATH)/atopgpud
++		#cp atopgpud  		$(DESTDIR)$(SBINPATH)/atopgpud
++		#chmod 0700 		$(DESTDIR)$(SBINPATH)/atopgpud
+ 		cp atopconvert 		$(DESTDIR)$(BINPATH)/atopconvert
+ 		chmod 0711 		$(DESTDIR)$(BINPATH)/atopconvert
+ 		cp atopcat 		$(DESTDIR)$(BINPATH)/atopcat
+@@ -162,7 +162,7 @@ genericinstall:	atop atopacctd atopconve
+ 		cp man/atopcat.1 	$(DESTDIR)$(MAN1PATH)
+ 		cp man/atoprc.5  	$(DESTDIR)$(MAN5PATH)
+ 		cp man/atopacctd.8  	$(DESTDIR)$(MAN8PATH)
+-		cp man/atopgpud.8  	$(DESTDIR)$(MAN8PATH)
++		#cp man/atopgpud.8  	$(DESTDIR)$(MAN8PATH)
+ 
+ ##########################################################################
+ 
